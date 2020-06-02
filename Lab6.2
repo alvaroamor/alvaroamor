@@ -1,0 +1,50 @@
+Solve (manually) using Gaussian substitution:
+
+(0) 4x1 − x2 + x3 = 8
+(1) 2x1 + 5x2 + 2x3 = 3
+(2) x1 + 2x2 + 4x3 = 11
+
+
+
+Following the Gaussian Subtitution we have to multiply (1) by -2 and plus to equation (0). The same for (2), multiplying by -2 and plus to equation (1)
+
+(0) 4x1 − x2 + x3 = 8
+(1) -11x2 -3x3 = 2
+(2) x2 -6x3 =-19
+
+The next step will be multiply (2) per 11 and plus (1)
+
+(0) 4x1 − x2 + x3 = 8
+(1) -11x2 -3x3 = 2
+(2) -69x3 = -207
+
+
+After all of this substitution, we can form the next matrix A = [[4, -1 , 1], and we got the next vector b [8, 2, -207]
+                                                                 [0, -11, -3]
+                                                                 [0,   0,-69]]
+
+
+
+We can see that the result are the same than in the lab. Being x3= -207/-69 = 3.  x2 = -1  x1= 1.
+
+
+Now we have to do the same for the other equation
+
+Solve (manually) using Gaussian substitution:
+
+
+(0) 4x1 − x2 + 2x3 = 9
+(1) 2x1 + 4x2 − x3 = −5
+(2) x1 + x2 − 3x3 = −9
+
+Following the Gaussian Subtitution we have to multiply (1) by -2 and plus to equation (0). The same for (2), multiplying by -2 and plus to equation (1)
+
+(0) 4x1 − x2 + 2x3 = 9
+(1) -9x2 + 4x3 = 19
+(2) 53x3 = 155
+
+After all of this substitution, we can form the next matrix A = [[4, -1 , 1], and we got the next vector b [9, 19, 155]
+                                                                 [0, -9, 4]
+                                                                 [0,   0, 53]]
+
+We can see that the result are the same than in the lab. Being x3= 155/53 = 3.  x2 = -1  x1= 1.
