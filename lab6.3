@@ -1,0 +1,83 @@
+# Gaussian elimination
+
+import scipy 
+import scipy.linalg
+import numpy as np
+import copy
+
+def linearsolver(A0,b0):
+  n = len(A0)
+  M = A0
+
+  i = 0
+  for x in M:
+   x.append(b0[i])
+   i += 1
+
+
+  for k in range(n):
+   # first pivoting
+   for i in range(k,n):
+     if abs(M[i][k]) > abs(M[k][k]):
+        M[k], M[i] = M[i],M[k]
+     else:
+        pass
+   
+   # Gaussian elimination in loop 
+   for j in range(k+1,n):
+       q = float(M[j][k]) / M[k][k]
+       for m in range(k, n+1):
+          # M_jm = M_jm - M_jk / M_kk *M_km
+          M[j][m] -=  q * M[k][m]
+
+  x = [0 for i in range(n)]       # x = [0, 0, .... , 0]
+
+  # calculating x
+  x[n-1] =float(M[n-1][n])/M[n-1][n-1]
+  for i in range (n-1,-1,-1):
+    z = 0
+    for j in range(i+1,n):
+        z = z  + float(M[i][j])*x[j]
+    x[i] = float(M[i][n] - z)/M[i][i]
+  return x
+
+
+A0 = [[4, -1, 1], [2, 5, 2], [1, 2, 4]]
+b0 = [8, 3, 11]
+
+A2 = [[4, -1, 2], [2, 4, -1], [1, 1, -3]]
+b2 = [9, -5, -9]
+
+
+#Equation 1
+
+A1 = copy.deepcopy(A0)
+x = linearsolver(A1, b0)
+
+print("Result with our linearsolver:")
+print(np.array(A0)," * x = ",np.array(b0))
+print("Solution:")
+print(x)
+
+
+
+
+x = scipy.linalg.solve(A0,b0)
+
+print(" ")
+print("Result with linalg.solve:")
+print(np.array(A0)," * x = ",np.array(b0))
+print("Solution:")
+print(x)
+
+
+print ('/n')
+
+#Equation 2
+A1 = copy.deepcopy(A2)
+x = linearsolver(A1, b2)
+
+print("Result with our linearsolver:")
+print(np.array(A2)," * x = ",np.array(b2))
+print("Solution:")
+print(x)
