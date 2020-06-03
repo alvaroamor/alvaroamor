@@ -1,0 +1,22 @@
+
+a) The formula is:
+
+I4= sum ((ni-ni-1)*(f(ni)f(ni-1)/2) for i=1:n
+So, I4= (1-0)/2*(f(1)+f(0)) + (2-1)/2*(f(1)+f(2)) + (3-2)/2*(f(2)+f(3))
+      = 1/2 * (1+4+9+16+4+9)  = 21.5
+      
+b) The formula is:
+I4= sum ((ni-ni-1)*f(ni) for i=1:n
+We have, I4 = (1-0)*f(1) + (2-1)*f(2) + (3-2)*f(3) = 29
+
+c)The formula is:
+
+I4= sum ((ni-ni-1)*f(ni-1) for i=1:n
+
+We have, I4 = (1-0)*f(0) + (2-1)*f(1) + (3-2)*f(2) = 14
+
+d) The formula is:
+
+I4= sum ((ni-ni-1)*(f((ni-1+ni)/2) for i=1:n
+
+We have, I4= (2-1)*f(3/2) + (3-2)*f(5/2) + (4-3)*f(7/2) = 20.75
